@@ -6,6 +6,20 @@ export async function GET(req) {
   try {
     const response = await fetch(url);
 
+    if (response.status === 429) {
+      return new Response(
+        JSON.stringify({
+          error: "To many request, wait for a while and refresh",
+        }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+    }
+
     if (!response.ok) {
       return new Response(
         "Network response was not ok: " + response.statusText,

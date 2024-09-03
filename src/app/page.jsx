@@ -19,17 +19,21 @@ export default function Cuaca() {
   };
 
   const navigateToCuaca = () => {
-    router.push(
-      `/CuacaDetail?location=${encodeURIComponent(
-        namaNegeri
-      )}&location2=${encodeURIComponent(namaDaerah)}`
-    );
+    if (!namaDaerah) {
+      alert("Pilih Daerah");
+    } else {
+      router.push(
+        `/CuacaDetail?location=${encodeURIComponent(
+          namaNegeri
+        )}&location2=${encodeURIComponent(namaDaerah)}`
+      );
+    }
   };
 
   return (
     <div>
       <PageMuka hantarNamaNegeri={hantarNamaNegeri} />
-      <PageDaerah hantarNamaDaerah={hantarNamaDaerah} />
+      <PageDaerah hantarNamaDaerah={hantarNamaDaerah} namaNegeri={namaNegeri} />
       <Buttons navigateToCuaca={navigateToCuaca} />
       {/*  <PageDaerah /> */}
     </div>

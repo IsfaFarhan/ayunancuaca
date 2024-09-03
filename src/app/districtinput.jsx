@@ -11,24 +11,21 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Johor, Kedah } from "./district";
+import { daerah } from "./district";
 
-export default function PageDaerah({ hantarNamaDaerah }) {
+export default function PageDaerah({ hantarNamaDaerah, namaNegeri }) {
+  const filterDaerah = daerah[namaNegeri] || [];
+
   return (
     <div>
       <Select onValueChange={hantarNamaDaerah}>
         <SelectTrigger className="w-[280px]">
-          <SelectValue placeholder="Pilih Negeri" />
+          <SelectValue placeholder="Pilih Daerah" />
         </SelectTrigger>
         <SelectContent>
           <SelectGroup>
-            <SelectLabel>Malaysia</SelectLabel>
-            {Johor.map((district, index) => (
-              <SelectItem key={index} value={district}>
-                {district}
-              </SelectItem>
-            ))}
-            {Kedah.map((district, index) => (
+            <SelectLabel>Daerah {namaNegeri}</SelectLabel>
+            {filterDaerah.map((district, index) => (
               <SelectItem key={index} value={district}>
                 {district}
               </SelectItem>
@@ -36,7 +33,6 @@ export default function PageDaerah({ hantarNamaDaerah }) {
           </SelectGroup>
         </SelectContent>
       </Select>
-      {/*    <button onClick={navigateToCuaca}>Lihat Cuaca</button> */}
     </div>
   );
 }

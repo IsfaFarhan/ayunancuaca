@@ -3,7 +3,7 @@ import React from "react";
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { useSearchParams } from "next/navigation";
-export default function Cuaca2() {
+export default function Cuaca2({ addDay }) {
   const [weather, setWeather] = useState(null);
   const searchParams = useSearchParams();
   const [error, setError] = useState(null);
@@ -22,7 +22,7 @@ export default function Cuaca2() {
   if (error) return <div>Error: {error}</div>;
   if (!weather) return <div>Loading...</div>;
 
-  const today = weather[2];
+  const today = weather[addDay];
 
   return (
     <div>
