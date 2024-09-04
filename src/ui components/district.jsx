@@ -1,7 +1,6 @@
 "use client";
 import React from "react";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import { useSearchParams } from "next/navigation";
 export default function Cuaca3({ addDay }) {
   const [weather, setWeather] = useState(null);

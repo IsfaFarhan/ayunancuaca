@@ -1,22 +1,47 @@
 "use client";
 import React from "react";
-import { useState, useEffect } from "react";
-import { useRouter } from "next/router";
-import { useSearchParams } from "next/navigation";
+import { useState } from "react";
 import Cuaca2 from "../../ui components/state";
 import Cuaca3 from "../../ui components/district";
 
 export default function Cuaca() {
   const [addDay, setAddDay] = useState(6);
+  const tarikh = new Date();
+  const hari = tarikh.getDay();
+  const days = ["Ahad", "Isnin", "Selasa", "Rabu", "Khamis", "Jumaat", "sabtu"];
 
-  let countDay;
-  if (addDay === 6) {
-    countDay = <p>Hari ini</p>;
-  } else if (addDay === 5) {
-    countDay = <p>Esok</p>;
-  } else if (addDay === 4) {
-    countDay = <p>Lusa</p>;
-  }
+  const [addDate, setAddDate] = useState(hari);
+
+  const incDay = () => {
+    if (addDate < 6) {
+      setAddDate(addDate + 1);
+    } else {
+      setAddDate(0);
+    }
+  };
+
+  const decDay = () => {
+    if (addDate <= 6 && addDate > 0) {
+      setAddDate(addDate - 1);
+    } else {
+      setAddDate(6);
+    }
+  };
+  let countDay = days[addDate];
+
+  const buttonAllInc = () => {
+    if (addDay <= 6 && addDay > 0) {
+      incDay();
+      increase();
+    }
+  };
+
+  const buttonAllDec = () => {
+    if (addDay >= 0 && addDay < 6) {
+      decDay();
+      decrease();
+    }
+  };
 
   const increase = () => {
     if (addDay <= 6 && addDay > 0) {
@@ -32,9 +57,9 @@ export default function Cuaca() {
   return (
     <div>
       <div>
-        <button onClick={increase}>Tambah Hari</button>
+        <button onClick={buttonAllInc}>Tambah Hari</button>
         <p>{countDay}</p>
-        <button onClick={decrease}>Tolak Hari</button>
+        <button onClick={buttonAllDec}>Tolak Hari</button>
       </div>
       <Cuaca2 addDay={addDay} />
       <Cuaca3 addDay={addDay} />
