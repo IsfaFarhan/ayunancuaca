@@ -19,7 +19,7 @@ export default function PageDaerah({ hantarNamaDaerah, namaNegeri }) {
   return (
     <div>
       <Select onValueChange={hantarNamaDaerah}>
-        <SelectTrigger className="w-[280px]">
+        <SelectTrigger className="max-w-[350px] m-2">
           <SelectValue placeholder="Pilih Daerah" />
         </SelectTrigger>
         <SelectContent>

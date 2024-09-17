@@ -73,7 +73,7 @@ export const daerah = {
     "Kuala Kangsar",
     "Larut & Matang",
     "Hilir Perak",
-    "Ulu Perak",
+    "Hulu Perak",
     "Perak Tengah",
   ],
 
@@ -181,10 +181,10 @@ export const daerah = {
     "Hulu Terengganu",
     "Besut",
   ],
-
   KualaLumpur: ["Kuala Lumpur"],
   Putrajaya: ["Putrajaya"],
   Labuan: ["Labuan"],
+  Wilayah: ["Kuala Lumpur", "Putrajaya" /* "Labuan" */],
 };
 
 /* export const Johor = [

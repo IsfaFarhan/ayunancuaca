@@ -34,7 +34,7 @@ export async function GET(req) {
     const locationData = data.filter(
       (item) => item.location.location_name === location
     );
-
+    /* console.log(locationData); */
     if (locationData) {
       return new Response(
         JSON.stringify(locationData),

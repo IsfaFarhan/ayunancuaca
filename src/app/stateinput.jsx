@@ -16,7 +16,7 @@ export default function PageMuka({ hantarNamaNegeri }) {
   return (
     <div>
       <Select onValueChange={hantarNamaNegeri}>
-        <SelectTrigger className="w-[280px]">
+        <SelectTrigger className="w-[350px] m-2">
           <SelectValue placeholder="Pilih Negeri" />
         </SelectTrigger>
         <SelectContent>
@@ -35,9 +35,10 @@ export default function PageMuka({ hantarNamaNegeri }) {
             <SelectItem value="Sarawak">Sarawak</SelectItem>
             <SelectItem value="Selangor">Selangor</SelectItem>
             <SelectItem value="Terengganu">Terengganu</SelectItem>
-            <SelectItem value="Kuala Lumpur">Kuala Lumpur</SelectItem>
+            {/* <SelectItem value="KualaLumpur">Kuala Lumpur</SelectItem>
             <SelectItem value="Putrajaya">Putrajaya</SelectItem>
-            <SelectItem value="Labuan">Labuan</SelectItem>
+            <SelectItem value="Labuan">Labuan</SelectItem> */}
+            <SelectItem value="Wilayah">Wilayah</SelectItem>
           </SelectGroup>
         </SelectContent>
       </Select>

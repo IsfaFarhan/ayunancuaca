@@ -16,11 +16,14 @@
   }
 }
 
-body {
+/* body {
   color: black;
-  background: white rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, #f3fdfd, #e4fffb);
 }
-
+ */
+.debug {
+  border: 1px solid red;
+}
 @layer utilities {
   .text-balance {
     text-wrap: balance;
