@@ -30,7 +30,7 @@ export default function Cuaca2({ addDay }) {
   const today = weather[addDay];
 
   return (
-    <div className="flex-col flex items-center bg-white shadow-custom-blue rounded-lg m-2 max-w-[350px] min-h-[620px] p-6">
+    <div className="transition ease-in-out duration-500 transform flex-col flex items-center bg-white shadow-custom-blue rounded-lg m-2 min-h-[620px] xl:w-[350px] lg:w-[970px] md:w-[970px] sm:w-[350px] p-6">
       <h1 className="font-medium text-lg">{negeri}</h1>
 
       <Image

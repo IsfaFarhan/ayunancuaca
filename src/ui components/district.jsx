@@ -71,9 +71,9 @@ export default function Cuaca3({ addDay }) {
   /////////
 
   return (
-    <div className="flex-col justify-between items-center p-8 shadow-custom-blue rounded-lg bg-white m-2 w-[970px]">
+    <div className="flex-row justify-between items-center p-8 shadow-custom-blue rounded-lg bg-white m-2 lg:w-[970px] md:w-[970px] sm:w-[350px]">
       <div className="flex-row flex justify-between">
-        <h1 className="text-xl">Kawasan {daerah}</h1>
+        <h1 className="text-xl pb-2">Kawasan {daerah}</h1>
         <p>Tarikh: {today.date}</p>
       </div>
       <div className="p-4 border border-[#2D7FAE] border-opacity-25 rounded-lg">
@@ -119,8 +119,8 @@ export default function Cuaca3({ addDay }) {
           <div className="h-[20px] w-[20px] bg-[#FF916E] rounded-xl"></div>
         </div>
         <div className="pb-2 pt-4 flex-row flex justify-between items-cente">
-          <p className="text-sm">minima {today.min_temp} darjah salsius</p>
-          <p className="text-sm">maxima {today.max_temp} darjah salsius</p>
+          <p className="text-sm">minima {today.min_temp} Celsius</p>
+          <p className="text-sm">maxima {today.max_temp} Celsius</p>
         </div>
       </div>
     </div>

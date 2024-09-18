@@ -58,10 +58,10 @@ export default function Cuaca() {
   return (
     <div>
       {/* z-50 relative bottom-14 left-[38rem] */}
-      <div className=" z-50 absolute right-[2rem] top-5 flex-row flex items-center justify-center">
+      <div className=" z-50 lg:absolute sm:static right-[2rem] top-5 flex-row flex items-center justify-center">
         <button onClick={buttonAllDec}>
           <Image
-            className="bg-[#46BCFF] rounded-tl-md rounded-bl-md"
+            className="bg-[#46BCFF] rounded-tl-md rounded-bl-md hover:bg-[#2D7FAE] transition duration-300 ease-in-out"
             src="/left chev.svg" // Path to your image
             alt="Tolak hari" // Alternative text for accessibility
             width={34} // Desired width
@@ -73,7 +73,7 @@ export default function Cuaca() {
         </p>
         <button onClick={buttonAllInc}>
           <Image
-            className="bg-[#46BCFF] rounded-tr-md rounded-br-md hover:shadow-custom-hover"
+            className="bg-[#46BCFF] rounded-tr-md rounded-br-md hover:bg-[#2D7FAE] transition duration-300 ease-in-out"
             src="/right chev.svg" // Path to your image
             alt="Tolak hari" // Alternative text for accessibility
             width={34} // Desired width
@@ -81,7 +81,7 @@ export default function Cuaca() {
           />
         </button>
       </div>
-      <div className="w-screen flex-row flex justify-center flex-wrap">
+      <div className="w-screen min-w-[500px] flex-row flex justify-center flex-wrap">
         <Cuaca2 addDay={addDay} />
         <Cuaca3 addDay={addDay} />
       </div>

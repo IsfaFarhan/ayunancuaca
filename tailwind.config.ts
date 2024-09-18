@@ -10,6 +10,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        sm: "300px", // Adds a custom breakpoint at 900px
+      },
       fontFamily: {
         sans: ["Poppins", "Helvetica", "Arial", "sans-serif"],
       },
