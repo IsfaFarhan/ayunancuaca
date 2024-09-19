@@ -15,17 +15,28 @@ export default function Cuaca2({ addDay }) {
     if (negeri) {
       // Call your API route
       fetch(`/api/weathernegeri?location=${negeri}`)
-        .then((response) => response.json())
+        /* .then((response) => response.json()) */
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((errorData) => {
+              // Manually handle the error based on response
+              throw new Error(errorData.error || "An error occurred");
+            });
+          }
+          return response.json(); // Proceed if response is ok
+        })
         .then((data) => setWeather(data))
         .catch((error) => setError(error.message));
     }
   }, [negeri]);
-  if (error) return <div>Error: {error}</div>;
-  if (!negeri) {
+  if (error) {
+    return <div>Error: {error}</div>;
+  } else if (!negeri) {
     return null;
   } else if (!weather) {
     return <div>Loading...</div>;
   }
+  /*  if (respopnse.status === 429) return <p>{error.message}</p>; */
 
   const today = weather[addDay];
 

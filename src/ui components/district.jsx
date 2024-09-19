@@ -8,6 +8,7 @@ import { useRive, Layout, Fit, Alignment } from "@rive-app/react-canvas";
 export default function Cuaca3({ addDay }) {
   const [weather, setWeather] = useState(null);
   const searchParams = useSearchParams(null);
+  const [salah, setSalah] = useState(null);
   const [error, setError] = useState(null);
 
   const daerah = searchParams.get("location2");
@@ -16,13 +17,27 @@ export default function Cuaca3({ addDay }) {
     if (daerah) {
       // Call your API route
       fetch(`/api/weatherdaerah?location=${daerah}`)
-        .then((response) => response.json())
+        /* .then((response) => response.json()) */
+        .then((response) => {
+          if (!response.ok) {
+            return response.json().then((errorData) => {
+              // Manually handle the error based on response
+              throw new Error(errorData.error || "An error occurred");
+            });
+          }
+          return response.json(); // Proceed if response is ok
+        })
         .then((data) => setWeather(data))
         .catch((error) => setError(error.message));
     }
   }, [daerah]);
-  if (error) return <div>Error: {error}</div>;
-  if (!weather) return <div>Loading...</div>;
+  if (error) {
+    return <div>Error: {error}</div>;
+  } else if (weather === 429) {
+    return <p>{error}</p>;
+  } else if (!weather) {
+    return <div>Loading...</div>;
+  }
 
   const today = weather[addDay];
 
