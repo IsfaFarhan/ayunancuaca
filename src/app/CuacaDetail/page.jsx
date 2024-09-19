@@ -66,7 +66,7 @@ export default function Cuaca() {
             <Image
               className="bg-[#46BCFF] rounded-tl-md rounded-bl-md hover:bg-[#2D7FAE] transition duration-300 ease-in-out"
               src="/left chev.svg" // Path to your image
-              alt="Tolak hari" // Alternative text for accessibility
+              alt="Tolak harini" // Alternative text for accessibility
               width={34} // Desired width
               height={34}
             />
