@@ -37,7 +37,7 @@ export default function Tentang() {
         />
       </div>
       <div className=" flex-row flex justify-center items-center pb-8">
-        <ButtonX />
+        <ButtonTwit />
         <ButtonLinkedin />
         <ButtonGit />
         <ButtonInsta />
@@ -46,13 +46,12 @@ export default function Tentang() {
   );
 }
 
-export function ButtonX() {
+export function ButtonTwit() {
   const openX = () => {
     window.open("https://x.com/isfa_farhan", "_blank");
   };
   return (
     <button>
-      {" "}
       <Image
         onClick={openX}
         className="m-1 "
