@@ -36,17 +36,17 @@ export default function Tentang() {
           height={500}
         />
       </div>
-      <div className=" flex-row flex justify-center items-center pb-8">
+      {/*   <div className=" flex-row flex justify-center items-center pb-8">
         <ButtonTwit />
         <ButtonLinkedin />
         <ButtonGit />
         <ButtonInsta />
-      </div>
+      </div> */}
     </div>
   );
 }
 
-export function ButtonTwit() {
+/* export function ButtonTwit() {
   const openX = () => {
     window.open("https://x.com/isfa_farhan", "_blank");
   };
@@ -55,7 +55,7 @@ export function ButtonTwit() {
       <Image
         onClick={openX}
         className="m-1 "
-        /* className="absolute xl:w-[500px] xl:top-72 right-[100px] sm:w-[130px] sm:top-[510px] " */
+   
         src="X.svg"
         alt="icon X"
         width={30}
@@ -74,7 +74,7 @@ export function ButtonLinkedin() {
       <Image
         onClick={openLinked}
         className="m-1"
-        /* className="absolute xl:w-[500px] xl:top-72 right-[100px] sm:w-[130px] sm:top-[510px] " */
+      
         src="linkedin.svg"
         alt="linked X"
         width={30}
@@ -93,7 +93,7 @@ export function ButtonGit() {
       <Image
         onClick={openGit}
         className="m-1"
-        /* className="absolute xl:w-[500px] xl:top-72 right-[100px] sm:w-[130px] sm:top-[510px] " */
+
         src="Git.svg"
         alt="Git icon"
         width={30}
@@ -112,7 +112,7 @@ export function ButtonInsta() {
       <Image
         onClick={openInsta}
         className="m-1"
-        /* className="absolute xl:w-[500px] xl:top-72 right-[100px] sm:w-[130px] sm:top-[510px] " */
+      
         src="Insta.svg"
         alt="icon Insta"
         width={30}
@@ -120,4 +120,4 @@ export function ButtonInsta() {
       />
     </button>
   );
-}
+} */
