@@ -31,7 +31,7 @@ export default function Tentang() {
           className="xl:w-[500px] sm:w-[130px] sm:top-[510px] "
           /* className="absolute xl:w-[500px] xl:top-72 right-[100px] sm:w-[130px] sm:top-[510px] " */
           src="Bulan.svg"
-          alt="gambar bulan sabit"
+          alt="gambar bulan sabit merah"
           width={500}
           height={500}
         />
